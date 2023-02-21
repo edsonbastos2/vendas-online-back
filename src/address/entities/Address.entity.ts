@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
 
-
 @Entity({ name: 'address'})
 export class AddressEntity {
   @PrimaryGeneratedColumn('rowid')

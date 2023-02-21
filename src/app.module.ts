@@ -16,6 +16,7 @@ import { CityModule } from './city/city.module';
 import { AddressModule } from './address/address.module';
 import { CityEntity } from './city/entities/City.entity';
 import { CacheModule } from './cache/cache.module';
+import { AddressEntity } from './address/entities/Address.entity';
 
 @Module({
   imports: [
@@ -29,7 +30,7 @@ import { CacheModule } from './cache/cache.module';
       password: process.env.DB_PASSWORD,
       username: process.env.DB_USER,
       port: Number(process.env.DB_PORT),
-      entities: [UserEntity, StateEntity, CityEntity],
+      entities: [UserEntity, StateEntity, CityEntity, AddressEntity],
       migrations: [
         createTableUser1676825995063,
         createTableState1676828733572,
