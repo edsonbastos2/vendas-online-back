@@ -1,5 +1,7 @@
 /* eslint-disable prettier/prettier */
-import {Column, Entity, PrimaryGeneratedColumn} from 'typeorm';
+import { AddressEntity } from 'src/address/entities/Address.entity';
+import { StateEntity } from 'src/state/entities/State.entity';
+import {Column, Entity, JoinColumn, ManyToOne, OneToMany, PrimaryGeneratedColumn} from 'typeorm';
 
 
 @Entity({ name: 'city'})
@@ -18,4 +20,11 @@ export class CityEntity {
 
   @Column({ name: 'updated_at', nullable: false})
   updatedAt: Date;
+
+  @OneToMany(() => AddressEntity, (address) => address.city)
+  addresses?: AddressEntity[]
+
+  @ManyToOne(() => StateEntity, (state) => state.cities)
+  @JoinColumn({name:'state_id', referencedColumnName:'id'})
+  state?:StateEntity
 }
