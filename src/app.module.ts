@@ -17,6 +17,7 @@ import { AddressModule } from './address/address.module';
 import { CityEntity } from './city/entities/City.entity';
 import { CacheModule } from './cache/cache.module';
 import { AddressEntity } from './address/entities/Address.entity';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -47,6 +48,7 @@ import { AddressEntity } from './address/entities/Address.entity';
     CityModule,
     AddressModule,
     CacheModule,
+    AuthModule,
   ],
   controllers: [],
   providers: [],
